@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  json-generator:
+    image: json_generator:1.0.0
+    container_name: jsonGeneratorContainer
+    build:
+      context: ./jsonGenerator
+      dockerfile: Dockerfile
+    volumes:
+      - /docker/jsonGenerator
+    ports:
+      - 8084:8084
+    restart: always
+
+  csv-converter:
+    image: csv_converter:1.0.0
+    container_name: csvConverterContainer
+    build:
+      context: ./csvConverter
+      dockerfile: Dockerfile
+    volumes:
+      - /docker/csvConverter
+    ports:
+      - 8085:8085
+    restart: always
+    depends_on:
+      - json-generator
