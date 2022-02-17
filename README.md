@@ -21,11 +21,11 @@ Application should be available on:
 ### CsvConverter
 * Download csv for given number of data
 
-`/generate/json/{size}` **
+`/downloadCsv/{size}` **
 
 * Download csv for given number of data and parameters
 
-`/generate/json/{size}/filter?params={params}` **
+`/downloadCsv/{size}/filter?params={params}` **
 
 List of accessible parameters:
 {params} = {_id,_type,type,key,name,fullName,iata_airport_code,country,latitude,longitude,location_id,inEurope,countryCode,coreCountry,distance}
